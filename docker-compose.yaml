@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  app:
+    build: '.'
+    ports: 
+      - '3000:3000'
+    depends_on:
+      - redis
+  
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
